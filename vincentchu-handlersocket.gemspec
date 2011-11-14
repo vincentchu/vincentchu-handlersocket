@@ -7,6 +7,6 @@ Gem::Specification.new do |s|
   s.email       = "vincentchu [at] gmail.com"
   s.files       = Dir.glob("lib/**/*.rb") + Dir.glob("ext/**/*")
   s.homepage    = "http://github.com/vincentchu/vincentchu-handlersocket"
-  s.extensions  = ["ext/HandlerSocket-Plugin-for-MySQL/extconf.rb", "ext/winebarrel-ruby-handlersocket-c19841e47ea2/extconf.rb"]
+  s.extensions  = ["ext/winebarrel-ruby-handlersocket-c19841e47ea2/extconf.rb"]
 end
 
