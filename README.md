@@ -8,9 +8,21 @@ For more information about HandlerSocket, please see the [main repository](https
 
 ## Why? Isn't there already ruby-handlersocket and a few other wrappers?
 
-Truthfully, I coudln't really get the [other](https://github.com/igrigorik/em-handlersocket) [clients](https://github.com/miyucy/handlersocket) to run, except for ruby-handlersocket. Unfortunately, I had to separately install the libhsclient libraries, dig my way through a few Makefiles, etc..
+Truthfully, I coudln't really get the [other](https://github.com/igrigorik/em-handlersocket) [clients](https://github.com/miyucy/handlersocket) to run or compile, except for ruby-handlersocket. Unfortunately, it is not installable via gem and I had to separately install the libhsclient libraries, dig my way through a few Makefiles, etc..
 
-Putting everything into a gem was my way of making sure I could build ruby-handlersocket in a repeatable way. Releasing it will hopefully be useful to some folks.
+Putting everything into a gem was my way of making sure I could build ruby-handlersocket in a repeatable way and use it portably in a few of my projects. Releasing it will hopefully be useful to some folks.
+
+## Use
+
+    gem install vincentchu-handlersocket
+
+Then, in ruby:
+
+    require 'handlersocket'
+    hs = HandlerSocket.new('127.0.0.1', 9999)
+    hs.open_index(3, "hs_test", "bodies", "PRIMARY", "id,eid,body")
+
+The API for the client is pretty barebones and hard to understand; the best place to start would be the [docs for the Perl client](https://github.com/ahiguti/HandlerSocket-Plugin-for-MySQL/blob/master/docs-en/perl-client.en.txt), which mirrors the interface for the ruby client.
 
 ## Dependencies
 
@@ -19,4 +31,4 @@ Putting everything into a gem was my way of making sure I could build ruby-handl
 
 ## Author
 
-vincentchu-handlersocket was written by Vincent Chu (vincentchu [at] gmail.com) and is used at [Posterous](http://posterous.com)
+vincentchu-handlersocket was written by Vincent Chu (vincentchu [at] gmail.com) and is used at [Posterous](http://posterous.com).
